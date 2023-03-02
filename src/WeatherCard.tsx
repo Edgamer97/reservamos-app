@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Card, CardBody } from "reactstrap";
 import { Result } from "./types";
 
-const apiKey = process.env.API_KEY;
+const apiKey = "a5a47c18197737e8eeca634cd6acb581";
 
 let days = [
   "Sunday",
@@ -16,281 +16,7 @@ let days = [
 
 const WeatherCard = ({ result }: { result: Result }) => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [dailyForecast, setDailyForecast] = useState([
-    {
-      dt: 1618308000,
-      sunrise: 1618282134,
-      sunset: 1618333901,
-      moonrise: 1618284960,
-      moonset: 1618339740,
-      moon_phase: 0.04,
-      temp: {
-        day: 279.79,
-        min: 20.09,
-        max: 30.07,
-        night: 275.09,
-        eve: 279.21,
-        morn: 278.49,
-      },
-      feels_like: {
-        day: 277.59,
-        night: 276.27,
-        eve: 276.49,
-        morn: 276.27,
-      },
-      pressure: 1020,
-      humidity: 81,
-      dew_point: 276.77,
-      wind_speed: 3.06,
-      wind_deg: 294,
-      weather: [
-        {
-          id: 500,
-          main: "Rain",
-          description: "light rain",
-          icon: "10d",
-        },
-      ],
-      clouds: 56,
-      pop: 0.2,
-      rain: 0.62,
-      uvi: 1.93,
-    },
-    {
-      dt: 1618308000,
-      sunrise: 1618282134,
-      sunset: 1618333901,
-      moonrise: 1618284960,
-      moonset: 1618339740,
-      moon_phase: 0.04,
-      temp: {
-        day: 279.79,
-        min: 20.09,
-        max: 30.07,
-        night: 275.09,
-        eve: 279.21,
-        morn: 278.49,
-      },
-      feels_like: {
-        day: 277.59,
-        night: 276.27,
-        eve: 276.49,
-        morn: 276.27,
-      },
-      pressure: 1020,
-      humidity: 81,
-      dew_point: 276.77,
-      wind_speed: 3.06,
-      wind_deg: 294,
-      weather: [
-        {
-          id: 500,
-          main: "Rain",
-          description: "light rain",
-          icon: "10d",
-        },
-      ],
-      clouds: 56,
-      pop: 0.2,
-      rain: 0.62,
-      uvi: 1.93,
-    },
-    {
-      dt: 1618308000,
-      sunrise: 1618282134,
-      sunset: 1618333901,
-      moonrise: 1618284960,
-      moonset: 1618339740,
-      moon_phase: 0.04,
-      temp: {
-        day: 279.79,
-        min: 20.09,
-        max: 30.07,
-        night: 275.09,
-        eve: 279.21,
-        morn: 278.49,
-      },
-      feels_like: {
-        day: 277.59,
-        night: 276.27,
-        eve: 276.49,
-        morn: 276.27,
-      },
-      pressure: 1020,
-      humidity: 81,
-      dew_point: 276.77,
-      wind_speed: 3.06,
-      wind_deg: 294,
-      weather: [
-        {
-          id: 500,
-          main: "Rain",
-          description: "light rain",
-          icon: "10d",
-        },
-      ],
-      clouds: 56,
-      pop: 0.2,
-      rain: 0.62,
-      uvi: 1.93,
-    },
-    {
-      dt: 1618308000,
-      sunrise: 1618282134,
-      sunset: 1618333901,
-      moonrise: 1618284960,
-      moonset: 1618339740,
-      moon_phase: 0.04,
-      temp: {
-        day: 279.79,
-        min: 20.09,
-        max: 30.07,
-        night: 275.09,
-        eve: 279.21,
-        morn: 278.49,
-      },
-      feels_like: {
-        day: 277.59,
-        night: 276.27,
-        eve: 276.49,
-        morn: 276.27,
-      },
-      pressure: 1020,
-      humidity: 81,
-      dew_point: 276.77,
-      wind_speed: 3.06,
-      wind_deg: 294,
-      weather: [
-        {
-          id: 500,
-          main: "Rain",
-          description: "light rain",
-          icon: "10d",
-        },
-      ],
-      clouds: 56,
-      pop: 0.2,
-      rain: 0.62,
-      uvi: 1.93,
-    },
-    {
-      dt: 1618308000,
-      sunrise: 1618282134,
-      sunset: 1618333901,
-      moonrise: 1618284960,
-      moonset: 1618339740,
-      moon_phase: 0.04,
-      temp: {
-        day: 279.79,
-        min: 20.09,
-        max: 30.07,
-        night: 275.09,
-        eve: 279.21,
-        morn: 278.49,
-      },
-      feels_like: {
-        day: 277.59,
-        night: 276.27,
-        eve: 276.49,
-        morn: 276.27,
-      },
-      pressure: 1020,
-      humidity: 81,
-      dew_point: 276.77,
-      wind_speed: 3.06,
-      wind_deg: 294,
-      weather: [
-        {
-          id: 500,
-          main: "Rain",
-          description: "light rain",
-          icon: "10d",
-        },
-      ],
-      clouds: 56,
-      pop: 0.2,
-      rain: 0.62,
-      uvi: 1.93,
-    },
-    {
-      dt: 1618308000,
-      sunrise: 1618282134,
-      sunset: 1618333901,
-      moonrise: 1618284960,
-      moonset: 1618339740,
-      moon_phase: 0.04,
-      temp: {
-        day: 279.79,
-        min: 20.09,
-        max: 30.07,
-        night: 275.09,
-        eve: 279.21,
-        morn: 278.49,
-      },
-      feels_like: {
-        day: 277.59,
-        night: 276.27,
-        eve: 276.49,
-        morn: 276.27,
-      },
-      pressure: 1020,
-      humidity: 81,
-      dew_point: 276.77,
-      wind_speed: 3.06,
-      wind_deg: 294,
-      weather: [
-        {
-          id: 500,
-          main: "Rain",
-          description: "light rain",
-          icon: "10d",
-        },
-      ],
-      clouds: 56,
-      pop: 0.2,
-      rain: 0.62,
-      uvi: 1.93,
-    },
-    {
-      dt: 1618308000,
-      sunrise: 1618282134,
-      sunset: 1618333901,
-      moonrise: 1618284960,
-      moonset: 1618339740,
-      moon_phase: 0.04,
-      temp: {
-        day: 279.79,
-        min: 20.09,
-        max: 30.07,
-        night: 275.09,
-        eve: 279.21,
-        morn: 278.49,
-      },
-      feels_like: {
-        day: 277.59,
-        night: 276.27,
-        eve: 276.49,
-        morn: 276.27,
-      },
-      pressure: 1020,
-      humidity: 81,
-      dew_point: 276.77,
-      wind_speed: 3.06,
-      wind_deg: 294,
-      weather: [
-        {
-          id: 500,
-          main: "Rain",
-          description: "light rain",
-          icon: "10d",
-        },
-      ],
-      clouds: 56,
-      pop: 0.2,
-      rain: 0.62,
-      uvi: 1.93,
-    },
-  ]);
+  const [dailyForecast, setDailyForecast] = useState([]);
 
   const getDay = (dt: number) => {
     let d = new Date(dt * 1000);
@@ -304,7 +30,7 @@ const WeatherCard = ({ result }: { result: Result }) => {
         `https://api.openweathermap.org/data/2.5/onecall?lat=${result.lat}&lon=${result.long}&units=metric&exclude=minutely,hourly,alerts&appid=${apiKey}`
       );
       const data = await response.json();
-      setDailyForecast(data.daily || []);
+      setDailyForecast(data.daily.slice(1) || []);
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -312,7 +38,8 @@ const WeatherCard = ({ result }: { result: Result }) => {
   };
 
   useEffect(() => {
-    /* onSearchForecast(); */
+    onSearchForecast();
+    // eslint-disable-next-line
   }, []);
 
   return (

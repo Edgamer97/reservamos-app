@@ -1,7 +1,6 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Input } from "reactstrap";
-import { useRef, useState } from "react";
+import { useRef, useState, Fragment } from "react";
 import WeatherCard from "./WeatherCard";
 import { Result } from "./types";
 
@@ -35,7 +34,7 @@ function App() {
   };
 
   return (
-    <>
+    <Fragment>
       <div className="d-flex justify-content-center mt-5">
         <div className="w-25">
           <Input
@@ -54,7 +53,7 @@ function App() {
         {!loading &&
           results.map((result, i) => <WeatherCard result={result} key={i} />)}
       </div>
-    </>
+    </Fragment>
   );
 }
 
